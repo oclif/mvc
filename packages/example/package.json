@@ -2,6 +2,10 @@
   "name": "example",
   "version": "0.0.0",
   "private": true,
+  "files": [],
+  "oclif": {
+    "commands": "./lib/commands"
+  },
   "dependencies": {
     "omvc": "^0.0.0"
   }
