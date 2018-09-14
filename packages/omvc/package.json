@@ -1,0 +1,59 @@
+{
+  "name": "omvc",
+  "version": "0.0.0",
+  "author": "Jeff Dickey @jdxcode",
+  "bin": {
+    "omvc": "./bin/run"
+  },
+  "bugs": "https://github.com/oclif/mvc/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "tslib": "^1",
+    "tslint": "^5.11.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/tslint": "^3",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "globby": "^8",
+    "ts-node": "^7",
+    "tslint": "^5",
+    "typescript": "^3.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/oclif/mvc",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "omvc",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "oclif/mvc",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "posttest": "tsc -p . --noEmit && tslint -p . -t stylish",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+    "prepare": "rm -rf lib && tsc",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
