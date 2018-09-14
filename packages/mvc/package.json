@@ -1,27 +1,21 @@
 {
-  "name": "omvc",
+  "name": "@oclif/mvc",
   "version": "0.0.0",
   "author": "Jeff Dickey @jdxcode",
-  "bin": {
-    "omvc": "./bin/run"
-  },
   "bugs": "https://github.com/oclif/mvc/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
-    "@oclif/mvc": "^0.0.0",
-    "@oclif/plugin-help": "^2",
-    "fs-extra": "^7.0.0",
-    "tslib": "^1",
-    "tslint": "^5.11.0"
+    "cli-ux": "^5.0.0-0",
+    "tslib": "^1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
+    "@oclif/plugin-help": "^2",
     "@oclif/tslint": "^3",
     "@types/chai": "^4",
-    "@types/fs-extra": "^5.0.4",
     "@types/mocha": "^5",
-    "@types/node": "^10.9.4",
+    "@types/node": "^10",
     "globby": "^8",
     "ts-node": "^7",
     "tslint": "^5",
@@ -31,21 +25,23 @@
     "node": ">=8.0.0"
   },
   "files": [
-    "/bin",
     "/lib",
     "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "/oclif.manifest.json",
+    "/yarn.lock"
   ],
   "homepage": "https://github.com/oclif/mvc",
   "keywords": [
-    "oclif"
+    "oclif-plugin"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "omvc",
-    "plugins": [
+    "bin": "oclif-example",
+    "hooks": {
+      "init": "./lib/hooks/init"
+    },
+    "devPlugins": [
       "@oclif/plugin-help"
     ]
   },
@@ -57,6 +53,5 @@
     "prepare": "rm -rf lib && tsc",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
-  },
-  "types": "lib/index.d.ts"
+  }
 }

@@ -4,9 +4,13 @@
   "private": true,
   "files": [],
   "oclif": {
-    "commands": "./lib/commands"
+    "commands": "./lib/commands",
+    "plugins": [
+      "@oclif/mvc"
+    ]
   },
   "dependencies": {
+    "@oclif/mvc": "^0.0.0",
     "omvc": "^0.0.0"
   }
 }
